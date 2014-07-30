@@ -146,7 +146,7 @@ li.clearfix {
 }
 
 .poster .not_yet .btn_notyet{
-  width: 100%;
+  width: 75%;
 }
 
 .weekly_winner_list{
@@ -364,7 +364,16 @@ li.clearfix {
 .popup_notyet{
 	width: 100%;
 	background:#fff;
-	
+}
+
+.mobile_popup_notyet{
+  width: 100%;
+}
+
+.not_yet_content{
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .input_box{
