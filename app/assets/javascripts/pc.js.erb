@@ -183,6 +183,15 @@ $(document).ready(function(){
       });  
   });
 
+  $("#popup_notyet_btn").click(function(event) {
+    event.preventDefault();
+		  $("#popup_notyet").bPopup({
+        positionStyle: 'fixed',
+        closeClass: 'close',
+        modalColor: 'black'
+      });  
+  });
+
   $("#request_address").click(function(event) {
     event.preventDefault();
     $("#address_box").bPopup({
