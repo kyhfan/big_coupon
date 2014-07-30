@@ -263,7 +263,7 @@ a{
 }
 .title_poster{
   margin-top: 80px;
-  margin-bottom:50px;
+  margin-bottom:0px;
   height:300px;
   position:relative;
 }
@@ -487,7 +487,7 @@ margin-top:6px;
 }
 
 .popup{
-  display: none;
+  //display: none;
   background-color: transparent;
 }
 
@@ -878,5 +878,19 @@ height: 490px;
   text-align:center;
   padding:40px 0;
   color:#ccc;
+}
+
+
+.not_yet{
+	padding-bottom:50px;
+}
+
+
+.popup_notyet{
+	float: left;
+	width: 400px;
+	height: 400px;
+	background-color: white;
+	position: relative;
 }
 
