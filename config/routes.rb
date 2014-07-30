@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     get 'comment_thanks' => 'home#comment_thanks'
     get 'out_of_stock' => 'home#out_of_stock'
     get 'winners' => 'home#winners'
+    get 'delivery_notyet' => 'home#delivery_notyet'
     resources :users do
       collection do
         get 'comment_new'
