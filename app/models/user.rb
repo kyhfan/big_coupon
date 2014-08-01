@@ -63,9 +63,9 @@ class User < ActiveRecord::Base
     users = self.joins(:applied_events)
       .where(applied_events:{created_at:(User.days_of_week)}).where(applied_events:{title:"poster"})
       .order("applied_events.updated_at desc")
-    
+
     workbook = WriteExcel.new('user_list.xls')
-    worksheet  = workbook.add_worksheet
+    worksheet = workbook.add_worksheet
     users.each_with_index do |user, i|
       worksheet.write(i, 0, i+1)
       worksheet.write(i, 1 , user.id)
