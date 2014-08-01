@@ -128,8 +128,8 @@ class User < ActiveRecord::Base
       return 240 - self.joins(:applied_events)
         .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
     elsif (days_of_week == 5)
-      return 220 - self.joins(:applied_events)
-        .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
+      self.fifth_week_poster_stock(poster_code)
+      # return 220 - self.joins(:applied_events).where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
     end
   end
   
@@ -149,6 +149,25 @@ class User < ActiveRecord::Base
         .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
     elsif (poster_code == 5)
       return 160 - self.joins(:applied_events)
+        .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
+    end
+  end
+  
+  def self.fifth_week_poster_stock(poster_code)
+    if (poster_code == 1)
+      return 170 - self.joins(:applied_events)
+        .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count    
+    elsif (poster_code == 2)
+      return 290 - self.joins(:applied_events)
+        .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
+    elsif (poster_code == 3)
+      return 140 - self.joins(:applied_events)
+        .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
+    elsif (poster_code == 4)
+      return 270 - self.joins(:applied_events)
+        .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
+    elsif (poster_code == 5)
+      return 210 - self.joins(:applied_events)
         .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
     end
   end
