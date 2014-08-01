@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
       return 240 - self.joins(:applied_events)
         .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
     elsif (days_of_week == 5)
-      return 100 - self.joins(:applied_events)
+      return 220 - self.joins(:applied_events)
         .where(users:{poster_code: poster_code}, applied_events:{created_at:(User.days_of_week)}).count
     end
   end
