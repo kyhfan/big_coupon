@@ -264,11 +264,22 @@ class User < ActiveRecord::Base
   end
   
   def self.count_by_device_type(event_title)
-    result = self.select(
-      
+    result = self.select(      
       "sum(case when users.device = 'pc' then 1 else 0 end) as pc_count, 
       sum(case when users.device = 'mobile' then 1 else 0 end) as mobile_count, 
       count(*) as total_count")
+  end
+  
+  
+  def self.daily_poster_counts_by_device_type
+    result = User.select( "date(convert_tz(applied_events.created_at, '+00:00','+09:00')) as updated_date
+    ,sum(case when users.device = 'pc' then 1 else 0 end) as pc_count, 
+      sum(case when users.device = 'mobile' then 1 else 0 end) as mobile_count, 
+      count(*) as total_count")
+      .joins(:applied_events)
+      .where(applied_events: {title: "poster"})
+      .group("date(convert_tz(applied_events.created_at,'+00:00','+09:00'))")
+      .order("convert_tz(applied_events.created_at,'+00:00','+09:00')")
   end
   
   def self.user_120
