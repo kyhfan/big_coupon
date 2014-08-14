@@ -851,6 +851,8 @@ height: 490px;
 #comment_popup_winner .popup_contents_wrapper .list_wrap .winner_list{
 	padding:4% 10%;
 	height:310px;
+  overflow: scroll;
+  
 	
 }
 #comment_popup_winner .popup_contents_wrapper .list_wrap .winner_list ul{
@@ -868,10 +870,6 @@ height: 490px;
 }
 #comment_popup_winner .popup_contents_wrapper .list_wrap .winner_list ul li span.name{
 	width:50px;
-}
-
-.weekly_winner_list{
-  display: none;
 }
 
 .weekly_winner_list .before{
